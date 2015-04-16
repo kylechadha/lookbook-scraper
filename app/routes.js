@@ -1,8 +1,7 @@
 var fs      = require('fs');
 var path    = require('path');
 var mime    = require('mime');
-var async   = require('async');
-var moment  = require('moment')
+// var async   = require('async');
 var scraper = require('./services/scraper')
 
 //
@@ -23,15 +22,8 @@ module.exports = function(app) {
   app.post('/', function(req, res, next) {
 
     var jsonData = {},
-        csvData = { data : "name,url,neighborhood,cuisine,review_count,time_window\r\n" }
-
-    // Use moment.js to manage time parsing.
-    var resDateTime = moment(req.body.date, "MM/DD/YYYY HH:mm A"),
-        resDate = resDateTime.format('YYYY-MM-DD'),
-        resTime = resDateTime.format('HH:mm');
-
-    var availableUrl = 'http://www.opentable.com/s/?datetime=' + resDate + '%20' + resTime + '&covers=' + req.body.people + '&metroid=4&regionids=5&showmap=false&popularityalgorithm=NameSearches&tests=EnableMapview,ShowPopularitySortOption,srs,customfilters&sort=Popularity&excludefields=Description&from=0',
-        unavailableUrl = availableUrl + '&onlyunavailable=true';
+        csvData = { data : "name,location,ig_name,ig_url,ig_status,ig_followers,email\r\n" },
+        url = 'http://lookbook.nu/north-america';
 
     // Use async to scrape the available and unavailable restaurant locations.
     // Note: We're running these in series right now so the unavailable locations follow the available ones, but this could be run in parallel as well.
@@ -40,29 +32,25 @@ module.exports = function(app) {
       // Send all the information to the scraper service we've defined in scraper.js
       function(callback) {
         scraper(availableUrl, jsonData, csvData, callback);
-      },
-
-      function(callback) {
-        scraper(unavailableUrl, jsonData, csvData, callback);
       }
 
     ], function() {
       
       // Once scraping is complete, write the json and csv files.
-      fs.writeFile('restaurants.json', JSON.stringify(jsonData, null, 4), function(error) {
+      fs.writeFile('looks.json', JSON.stringify(jsonData, null, 4), function(error) {
         if (!error) {
           console.log('JSON file successfully written.')
         }
       });
 
-      fs.writeFile('restaurants.csv', csvData['data'], function(error) {
+      fs.writeFile('looks.csv', csvData['data'], function(error) {
         if (!error) {
           console.log('CSV file successfully written.')
         }
       })
 
       // Render the page with the restaurant data.
-      res.render('layout', {restaurants: jsonData});
+      res.render('layout', {looks: jsonData});
 
     });
 
@@ -74,7 +62,7 @@ module.exports = function(app) {
   app.get('/download', function(req, res) {
 
     // Define the location of the csv file.
-    var file = 'restaurants.csv';
+    var file = 'looks.csv';
 
     var filename = path.basename(file);
     var mimetype = mime.lookup(file);
