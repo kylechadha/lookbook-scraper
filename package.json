@@ -1,0 +1,24 @@
+{
+  "name": "reservation-scraper",
+  "main": "server.js",
+  "private": "true",
+  "dependencies": {
+    "express": "~4.0.0",
+    "morgan": "~1.0.0",
+    "body-parser": "~1.0.0",
+    "method-override": "~1.0.0",
+    "express-session": "~1.0.0",
+    "mongoose": "~3.8.1",
+    "ejs": "~0.8.5",
+    "mime": "latest",
+    "moment": "~2.8.3",
+    "request": "latest",
+    "cheerio": "latest",
+    "async": "latest"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-sass": "latest"
+  }
+}

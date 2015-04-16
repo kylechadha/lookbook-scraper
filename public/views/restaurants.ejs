@@ -1,0 +1,40 @@
+<!-- Section: Restaurants -->
+<section>
+
+  <div class="container restaurants">
+
+    <h3>That was easy.</h3>
+    Like eating pie, but with more data.<br><br>
+
+    <form action="/download" method="get">
+      <button type="submit" class="btn btn-primary">Download as CSV</button>
+    </form><br>
+
+    <table class="table table-striped table-restaurants">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>URL</th>
+          <th>Neighborhood</th>
+          <th>Cuisine</th>
+          <th># of Reviews</th>
+          <th>Time Window</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var key in restaurants) { %>
+          <tr>
+            <td><%= restaurants[key]['name'] %></td>
+            <td><a target="_blank" href="<%= restaurants[key]['url'] %>">Link</a></td>
+            <td><%= restaurants[key]['neighborhood'] %></td>
+            <td><%= restaurants[key]['cuisine'] %></td>
+            <td><%= restaurants[key]['reviewCount'] %></td>
+            <td><%= restaurants[key]['timeWindow'] %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+    
+  </div>
+
+</section>

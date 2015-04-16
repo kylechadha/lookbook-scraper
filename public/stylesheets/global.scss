@@ -1,0 +1,112 @@
+//
+// Global SCSS File
+// ----------------------------------
+
+
+// Global Styles
+// -----------------------------------
+html,
+body {
+  height: 100%;
+  font-family: 'Gotham A', 'Gotham B', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+a {
+  color: #AC9456;
+}
+
+
+// Global Classes
+// -----------------------------------
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.svg-logo {
+  height: 1em;
+  fill: #fff;
+}
+
+
+// Bootstrap Global Overrides
+// -----------------------------------
+.container {
+  max-width: 1054px;
+}
+.btn {
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.btn-primary {
+  background-color: #AC9456;
+  border: none;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: lighten(#AC9456, 10%);
+  }
+}
+.form-group {
+  margin-right: 10px;
+}
+.bootstrap-datetimepicker-widget td.active {
+  background-color: #AC9456;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: lighten(#AC9456, 10%);
+  }
+}
+
+
+// Animation Styles
+// -----------------------------------
+.spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  
+  -webkit-animation: rotate 2.0s infinite linear;
+  animation: rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  border-radius: 100%;
+  
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0px;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
