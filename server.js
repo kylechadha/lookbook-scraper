@@ -15,7 +15,6 @@ var bodyParser = require('body-parser');
 var session    = require('express-session');
 
 var mongoose = require('mongoose');
-var configDB = require('./config/database.js');
 var cheerio  = require('cheerio');
 var async    = require('async');
 

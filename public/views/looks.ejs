@@ -1,7 +1,7 @@
 <!-- Section: Restaurants -->
-<section>
+<!-- <section>
 
-  <div class="container restaurants">
+  <div class="container looks">
 
     <h3>That was easy.</h3>
     Like eating pie, but with more data.<br><br>
@@ -10,7 +10,7 @@
       <button type="submit" class="btn btn-primary">Download as CSV</button>
     </form><br>
 
-    <table class="table table-striped table-restaurants">
+    <table class="table table-striped table-looks">
       <thead>
         <tr>
           <th>Name</th>
@@ -22,14 +22,14 @@
         </tr>
       </thead>
       <tbody>
-        <% for(var key in restaurants) { %>
+        <% for(var key in looks) { %>
           <tr>
-            <td><%= restaurants[key]['name'] %></td>
-            <td><a target="_blank" href="<%= restaurants[key]['url'] %>">Link</a></td>
-            <td><%= restaurants[key]['neighborhood'] %></td>
-            <td><%= restaurants[key]['cuisine'] %></td>
-            <td><%= restaurants[key]['reviewCount'] %></td>
-            <td><%= restaurants[key]['timeWindow'] %></td>
+            <td><%= looks[key]['name'] %></td>
+            <td><a target="_blank" href="<%= looks[key]['url'] %>">Link</a></td>
+            <td><%= looks[key]['neighborhood'] %></td>
+            <td><%= looks[key]['cuisine'] %></td>
+            <td><%= looks[key]['reviewCount'] %></td>
+            <td><%= looks[key]['timeWindow'] %></td>
           </tr>
         <% } %>
       </tbody>
@@ -38,3 +38,4 @@
   </div>
 
 </section>
+ -->
