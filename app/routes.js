@@ -1,7 +1,7 @@
 var fs      = require('fs');
 var path    = require('path');
 var mime    = require('mime');
-// var async   = require('async');
+var async   = require('async');
 var scraper = require('./services/scraper')
 
 //
@@ -30,7 +30,7 @@ module.exports = function(app) {
 
       // Send all the information to the scraper service we've defined in scraper.js
       function(callback) {
-        scraper(availableUrl, jsonData, csvData, callback);
+        scraper(url, jsonData, csvData, callback);
       }
 
     ], function() {

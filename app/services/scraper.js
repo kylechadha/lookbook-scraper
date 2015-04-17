@@ -7,7 +7,7 @@ var cheerio    = require('cheerio');
 
 module.exports = function(queryUrl, json, csv, callback) {
 
-  // Load the OpenTable URL to be scraped.
+  // Load the Lookbook URL to be scraped.
   request(queryUrl, function(error, response, html) {
 
     if (!error) {
@@ -18,7 +18,7 @@ module.exports = function(queryUrl, json, csv, callback) {
       var $ = cheerio.load(html);
 
       // Iterate through the search results.
-      $('.look').each(function() {
+      $('.look:not(:has(.premium_ad_container))').each(function() {
 
         var user = $(this),
             name,
@@ -97,18 +97,20 @@ module.exports = function(queryUrl, json, csv, callback) {
         // minutes = timeWindow %= 60;
         // timeWindow = hours + ':' + ('0' + minutes).slice(-2);
 
+
         // Save the data in CSV format.
-        csv['data'] = csv['data'] + '"' + name + '","' + url + '","' + neighborhood + '","' + cuisine + '","' + reviewCount + '",' + timeWindow + '\r\n';
+        csv['data'] = csv['data'] + '"' + name + '","' + location + '","' + country + '","' + ig_name + '","' + ig_url + '",' + ig_status + '",' + ig_followers + '",' + email + '\r\n';
 
         // Save the data in JSON format.
         json[name] = {};
         json[name]['name'] = name;
-        json[name]['url'] = url;
-        json[name]['neighborhood'] = neighborhood;
-        json[name]['cuisine'] = cuisine;
-        json[name]['reviewCount'] = reviewCount;
-        json[name]['slots'] = slotsArray;
-        json[name]['timeWindow'] = timeWindow;
+        json[name]['location'] = location;
+        json[name]['country'] = country;
+        json[name]['igName'] = ig_name;
+        json[name]['igUrl'] = ig_url;
+        json[name]['igStatus'] = ig_status;
+        json[name]['igFollowers'] = ig_followers;
+        json[name]['email'] = email;
 
       });
 
