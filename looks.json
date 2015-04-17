@@ -1,85 +1,146 @@
 {
-    "E M.": {
-        "name": "E M.",
-        "location": "District of Columbia",
+    "Susanne  J.": {
+        "name": "Susanne  J.",
+        "location": "Los Angeles",
         "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/user/15440-E-M",
-        "instagramUrl": "http://www.instagram.com/districtofchic"
+        "lookbookUrl": "http://lookbook.nu/susannejonsson",
+        "instagramName": "@susannejonsson",
+        "instagramUrl": "http://www.instagram.com/susannejonsson",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Marena S.": {
-        "name": "Marena S.",
-        "location": "Vancouver",
+    "Nnamdi M.": {
+        "name": "Nnamdi M.",
+        "location": "",
+        "country": "United States",
+        "lookbookUrl": "http://lookbook.nu/hisfashionhighness",
+        "instagramName": "@hisfashionhighness",
+        "instagramUrl": "http://www.instagram.com/hisfashionhighness",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
+    },
+    "Elena P.": {
+        "name": "Elena P.",
+        "location": "",
+        "country": "United States",
+        "lookbookUrl": "http://lookbook.nu/elenalien",
+        "instagramName": "@elenalien_",
+        "instagramUrl": "http://www.instagram.com/elenalien_",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
+    },
+    "Tatiana M.": {
+        "name": "Tatiana M.",
+        "location": "Toronto",
         "country": "Canada",
-        "lookbookUrl": "http://lookbook.nu/marenaskinner",
-        "instagramUrl": "http://www.instagram.com/marenaskinner"
+        "lookbookUrl": "http://lookbook.nu/stripesnvibes",
+        "instagramName": "",
+        "instagramUrl": "",
+        "instagramStatus": "",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Erin S.": {
-        "name": "Erin S.",
-        "location": "",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/erinsmith",
-        "instagramUrl": "http://www.instagram.com/thelifeandtimesoferinsmith"
-    },
-    "Daftbird  .": {
-        "name": "Daftbird  .",
+    "Lisa Linh": {
+        "name": "Lisa Linh",
         "location": "Los Angeles",
         "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/daftbird",
-        "instagramUrl": "http://www.instagram.com/daftbird"
+        "lookbookUrl": "http://lookbook.nu/bylisalinh",
+        "instagramName": "@bylisalinh",
+        "instagramUrl": "http://www.instagram.com/bylisalinh",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Macarena F.": {
-        "name": "Macarena F.",
-        "location": "Florida",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/user/3114032-Macarena-F"
-    },
-    "Lisa D.": {
-        "name": "Lisa D.",
+    "Gabriella  G.": {
+        "name": "Gabriella  G.",
         "location": "",
         "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/lisadnyc",
-        "instagramUrl": "http://www.instagram.com/lisadnyc"
+        "lookbookUrl": "http://lookbook.nu/gabriellaofficial",
+        "instagramName": "@Gabriellaofficial",
+        "instagramUrl": "http://www.instagram.com/Gabriellaofficial",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Mo D.": {
-        "name": "Mo D.",
-        "location": "Boston",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/belleofthebean",
-        "instagramUrl": "http://www.instagram.com/belleofthebean"
+    "Vyvian T.": {
+        "name": "Vyvian T.",
+        "location": "Toronto, Ontario",
+        "country": "Canada",
+        "lookbookUrl": "http://lookbook.nu/vyvianto",
+        "instagramName": "@vyvianto",
+        "instagramUrl": "http://www.instagram.com/vyvianto",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Maliyah Rae": {
-        "name": "Maliyah Rae",
-        "location": "Atlanta Georgia",
+    "Monica A.": {
+        "name": "Monica A.",
+        "location": "Atlanta",
         "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/maliyahrae",
-        "instagramUrl": "http://www.instagram.com/MaliyahRae"
+        "lookbookUrl": "http://lookbook.nu/awedbymonica",
+        "instagramName": "@awedbymoni",
+        "instagramUrl": "http://www.instagram.com/awedbymoni",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Victoria P.": {
-        "name": "Victoria P.",
-        "location": "Los Angeles",
+    "Marcel F.": {
+        "name": "Marcel F.",
+        "location": "Brooklyn",
         "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/littlebeebigcity",
-        "instagramUrl": "http://www.instagram.com/heybvp"
+        "lookbookUrl": "http://lookbook.nu/marcelfloruss",
+        "instagramName": "onedapperstreet",
+        "instagramUrl": "http://www.instagram.com/onedapperstreet",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Elizabeth K.": {
-        "name": "Elizabeth K.",
-        "location": "",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/elizabethkeene",
-        "instagramUrl": "http://www.instagram.com/elizabethkeene"
+    "Well-Put-Together W.": {
+        "name": "Well-Put-Together W.",
+        "location": "Toronto",
+        "country": "Canada",
+        "lookbookUrl": "http://lookbook.nu/wellputtogether",
+        "instagramName": "",
+        "instagramUrl": "",
+        "instagramStatus": "",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Hope B.": {
-        "name": "Hope B.",
-        "location": "Texas",
+    "Vivian Q.": {
+        "name": "Vivian Q.",
+        "location": "New York",
         "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/hopebidinger",
-        "instagramUrl": "http://www.instagram.com/hopebidi"
+        "lookbookUrl": "http://lookbook.nu/vivianquan",
+        "instagramName": "@sincerelyvivienne",
+        "instagramUrl": "http://www.instagram.com/sincerelyvivienne",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     },
-    "Kimberley P.": {
-        "name": "Kimberley P.",
-        "location": "Salt Lake City, Utah",
+    "Abdrahim M.": {
+        "name": "Abdrahim M.",
+        "location": "NYC",
         "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/kp0ssible",
-        "instagramUrl": "http://www.instagram.com/kp0ssible"
+        "lookbookUrl": "http://lookbook.nu/abdrahimmsiah",
+        "instagramName": "abdrahimxmsiah",
+        "instagramUrl": "http://www.instagram.com/abdrahimxmsiah",
+        "instagramStatus": "public",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
     }
 }

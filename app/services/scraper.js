@@ -97,33 +97,69 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
     function(callback) {
       async.each(users, function(user, callback) {
 
-        request(user.instagram_url, function(error, response, html) {
-          if (!error) {
+        console.log(user.instagram_url);
 
-            console.log('Scraper running on Instagram user page.');
+        if (user.instagram_url) {
+          request(user.instagram_url, function(error, response, html) {
+            if (!error) {
 
-            // Use Cheerio to load the page.
-            var $ = cheerio.load(html);
+              console.log('Scraper running on Instagram user page.');
 
-            // Scrape the user info.
-            var instagram_status = $('.UserProfileHeaderPrivate').length > 0 ? "private" : "public";
-            var instagram_followers = $('.UserProfileUserInfo .sCount')[1].innerHTML;
-            var email = ;
-            // info: $('.upuiBio span')[1].innerHTML
-            // home page: $($('.upuiBio span')[3]).find('a').attr('href')
+              // Use Cheerio to load the page.
+              var $ = cheerio.load(html);
 
-            // Update the users array.
-            var index = users.indexOf(user);
-            // user.instagram_name = instagram_name;
-            // user.instagram_url = instagram_url;
-            users[index] = user;
+              debugger;
 
-          } else {
-            callback(error);
-          }
+              // Scrape the user info.
+              var instagram_status = $('.UserProfileHeaderPrivate').length > 0 ? "private" : "public";
+              var instagram_followers = $($('.sCount')[1]).text();
+              var website = $($('.upuiBio span')[3]).find('a').attr('href');
 
-          callback(null)
-        })
+              var instagram_info = $($('.upuiBio span')[1]).text(),
+                infoArray = instagram_info.split(' '),
+                cleanArray = [],
+                email;
+
+              console.log(instagram_status);
+              console.log(instagram_followers);
+              console.log(instagram_info);
+              console.log(website);
+              console.log('\n');
+
+              infoArray.forEach(function(item) {
+                item = item.replace(/\b[-.,()&$#!\[\]{}"']+\B|\B[-.,()&$#!\[\]{}"']+\b/g, "");
+                cleanArray.push(item);
+              })
+
+              function validateEmail(email) {
+                  var regexp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+                  return regexp.test(email);
+              }
+
+              cleanArray.forEach(function(item) {
+                if (validateEmail(item)) {
+                  email = item;
+                }
+              })
+
+              // Update the users array.
+              var index = users.indexOf(user);
+              user.instagram_status = instagram_status;
+              user.instagram_followers = instagram_followers;
+              user.website = website;
+              user.email = email;
+              users[index] = user;
+
+            } else {
+              callback(error);
+            }
+
+            callback(null)
+          })
+        } else {
+          callback(null);
+        }
+
 
       }, function(err) {
         if (err) {
@@ -138,19 +174,20 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
     
     users.forEach(function(user) {
       // Save the data in CSV format.
-      csv['data'] = csv['data'] + '"' + user.name + '","' + user.location + '","' + user.country + '","' + user.lookbook_url + '","' + user.instagram_name + '","' + user.instagram_url + '",' + user.instagram_status + '",' + user.instagram_followers + '",' + user.email + '\r\n';
+      csv['data'] = csv['data'] + '"' + user.name + '","' + user.location + '","' + user.country + '","' + user.lookbook_url + '","' + user.instagram_name + '","' + user.instagram_url + '",' + user.instagram_status + '",' + user.instagram_followers + '",' + user.website + '",' + user.email + '\r\n';
 
       // Save the data in JSON format.
       json[user.name] = {};
-      json[user.name]['name'] = user.name;
-      json[user.name]['location'] = user.location;
-      json[user.name]['country'] = user.country;
-      json[user.name]['lookbookUrl'] = user.lookbook_url;
-      json[user.name]['instagramName'] = user.instagram_name;
-      json[user.name]['instagramUrl'] = user.instagram_url;
-      json[user.name]['instagramStatus'] = user.instagram_status;
-      json[user.name]['instagramFollowers'] = user.instagram_followers;
-      json[user.name]['email'] = user.email;
+      json[user.name]['name'] = user.name ? user.name : "";
+      json[user.name]['location'] = user.location ? user.location : "";
+      json[user.name]['country'] = user.country ? user.country : "";
+      json[user.name]['lookbookUrl'] = user.lookbook_url ? user.lookbook_url : "";
+      json[user.name]['instagramName'] = user.instagram_name ? user.instagram_name : "";
+      json[user.name]['instagramUrl'] = user.instagram_url ? user.instagram_url : "";
+      json[user.name]['instagramStatus'] = user.instagram_status ? user.instagram_status : "";
+      json[user.name]['instagramFollowers'] = user.instagram_followers ? user.instagram_followers : "";
+      json[user.name]['website'] = user.website ? user.website : "";
+      json[user.name]['email'] = user.email ? user.email : "";
     })
 
     // Let the router know we're done.
