@@ -22,11 +22,10 @@ module.exports = function(app) {
   app.post('/', function(req, res, next) {
 
     var jsonData = {},
-        csvData = { data : "name,location,ig_name,ig_url,ig_status,ig_followers,email\r\n" },
+        csvData = { data : "name,location,country,ig_name,ig_url,ig_status,ig_followers,email\r\n" },
         url = 'http://lookbook.nu/north-america';
 
-    // Use async to scrape the available and unavailable restaurant locations.
-    // Note: We're running these in series right now so the unavailable locations follow the available ones, but this could be run in parallel as well.
+    // Use async to ensure we write after the scraper is done.
     async.series([
 
       // Send all the information to the scraper service we've defined in scraper.js
