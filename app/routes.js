@@ -22,7 +22,7 @@ module.exports = function(app) {
   app.post('/', function(req, res, next) {
 
     var jsonData = {},
-        csvData = { data : "name,location,country,ig_name,ig_url,ig_status,ig_followers,email\r\n" },
+        csvData = { data : "name,location,country,lookbook_url,instagram_name,instagram_url,instagram_status,instagram_followers,email\r\n" },
         url = 'http://lookbook.nu/north-america';
 
     // Use async to ensure we write after the scraper is done.
