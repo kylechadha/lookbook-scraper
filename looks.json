@@ -1,62 +1,74 @@
 {
+    "Marena S.": {
+        "name": "Marena S.",
+        "location": "Vancouver",
+        "country": "Canada",
+        "lookbook_url": "http://lookbook.nu/marenaskinner"
+    },
     "Erin S.": {
         "name": "Erin S.",
         "location": "",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/erinsmith"
     },
     "Daftbird  .": {
         "name": "Daftbird  .",
         "location": "Los Angeles",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/daftbird"
     },
     "Macarena F.": {
         "name": "Macarena F.",
         "location": "Florida",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/user/3114032-Macarena-F"
     },
     "Lisa D.": {
         "name": "Lisa D.",
         "location": "",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/lisadnyc"
     },
     "Mo D.": {
         "name": "Mo D.",
         "location": "Boston",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/belleofthebean"
     },
     "Maliyah Rae": {
         "name": "Maliyah Rae",
         "location": "Atlanta Georgia",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/maliyahrae"
     },
     "Victoria P.": {
         "name": "Victoria P.",
         "location": "Los Angeles",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/littlebeebigcity"
     },
     "Elizabeth K.": {
         "name": "Elizabeth K.",
         "location": "",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/elizabethkeene"
     },
     "Hope B.": {
         "name": "Hope B.",
         "location": "Texas",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/hopebidinger"
     },
     "Kimberley P.": {
         "name": "Kimberley P.",
         "location": "Salt Lake City, Utah",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/kp0ssible"
     },
     "Storm C.": {
         "name": "Storm C.",
         "location": "Texas",
-        "country": "United States"
-    },
-    "Dominic G.": {
-        "name": "Dominic G.",
-        "location": "Las Vegas  ",
-        "country": "United States"
+        "country": "United States",
+        "lookbook_url": "http://lookbook.nu/stormcalysta"
     }
 }
