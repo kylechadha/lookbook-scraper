@@ -22,7 +22,7 @@ module.exports = function(app) {
   app.post('/', function(req, res, next) {
 
     var jsonData = {},
-        csvData = { data : "name,location,country,lookbook_url,instagram_name,instagram_url,instagram_status,instagram_followers,website,email\r\n" },
+        csvData = { data : "" },
         url = 'http://lookbook.nu/north-america';
 
     // Use async to ensure we write after the scraper is done.
@@ -42,11 +42,39 @@ module.exports = function(app) {
         }
       });
 
-      fs.writeFile('looks.csv', csvData['data'], function(error) {
-        if (!error) {
-          console.log('CSV file successfully written.')
+      fs.exists('looks.csv', function(exists) { 
+        if (exists) { 
+          fs.readFile('looks.csv', 'utf8', function (err,data) {
+            if (err) {
+              return console.log(err);
+            }
+
+            // Append the new data to the original data.
+            csvData['data'] = data + csvData['data'];
+
+            // Write the file.
+            fs.writeFile('looks.csv', csvData['data'], function(error) {
+              if (err) {
+                console.log(err);
+              } else {
+                console.log('CSV file successfully updated.')
+              }
+            })
+          });
+        } else {
+          // Add column headers to the new data.
+          csvData['data'] = 'name,location,country,lookbook_url,instagram_name,instagram_url,instagram_status,instagram_followers,website,email\r\n' + csv['data'];
+
+          // Write the file.
+          fs.writeFile('looks.csv', csvData['data'], function(error) {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log('CSV file successfully created.')
+            }
+          })
         }
-      })
+      }); 
 
       // Render the page with the restaurant data.
       res.render('layout', {looks: jsonData});

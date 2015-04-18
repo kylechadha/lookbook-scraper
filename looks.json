@@ -1,4 +1,52 @@
 {
+    "Dejon M.": {
+        "name": "Dejon M.",
+        "location": "Los Angeles ",
+        "country": "United States",
+        "lookbookUrl": "http://lookbook.nu/dejonmarquis",
+        "instagramName": "@DEJONMARQUIS",
+        "instagramUrl": "http://www.instagram.com/DEJONMARQUIS",
+        "instagramStatus": "public",
+        "instagramFollowers": "30.6k",
+        "website": "http://WWW.ICANDRESS2.COM",
+        "email": "dejonmarquis@yahoo.com"
+    },
+    "Kimberly K.": {
+        "name": "Kimberly K.",
+        "location": "Baltimore",
+        "country": "United States",
+        "lookbookUrl": "http://lookbook.nu/sensiblestylista",
+        "instagramName": "@sensiblestylista",
+        "instagramUrl": "http://www.instagram.com/sensiblestylista",
+        "instagramStatus": "public",
+        "instagramFollowers": "25.1k",
+        "website": "http://www.sensiblestylista.com",
+        "email": "sensiblestylista87@gmail.com"
+    },
+    "Shiaw F.": {
+        "name": "Shiaw F.",
+        "location": "California",
+        "country": "United States",
+        "lookbookUrl": "http://lookbook.nu/shiaw2014",
+        "instagramName": "@shiawfuu",
+        "instagramUrl": "http://www.instagram.com/shiawfuu",
+        "instagramStatus": "public",
+        "instagramFollowers": "65",
+        "website": "http://shiawstyle.blogspot.com",
+        "email": ""
+    },
+    "Moti  A.": {
+        "name": "Moti  A.",
+        "location": "New York",
+        "country": "United States",
+        "lookbookUrl": "http://lookbook.nu/metroman",
+        "instagramName": "",
+        "instagramUrl": "",
+        "instagramStatus": "",
+        "instagramFollowers": "",
+        "website": "",
+        "email": ""
+    },
     "Areta C.": {
         "name": "Areta C.",
         "location": "New York",
@@ -7,7 +55,7 @@
         "instagramName": "aretastylesecrets",
         "instagramUrl": "http://www.instagram.com/aretastylesecrets",
         "instagramStatus": "public",
-        "instagramFollowers": "1,244",
+        "instagramFollowers": "1,252",
         "website": "http://www.aretastylesecrets.com",
         "email": "aretabchen@gmail.com"
     },
@@ -55,7 +103,7 @@
         "instagramName": "@michellecristiana",
         "instagramUrl": "http://www.instagram.com/michellecristiana",
         "instagramStatus": "public",
-        "instagramFollowers": "487",
+        "instagramFollowers": "489",
         "website": "",
         "email": ""
     },
@@ -91,56 +139,8 @@
         "instagramName": "@giftofgabblog",
         "instagramUrl": "http://www.instagram.com/giftofgabblog",
         "instagramStatus": "public",
-        "instagramFollowers": "2,192",
+        "instagramFollowers": "2,193",
         "website": "http://www.gabriellakristina.blogspot.com",
         "email": "glkgomez5618@yahoo.com"
-    },
-    "Gioia Z.": {
-        "name": "Gioia Z.",
-        "location": "New York",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/blondebundle",
-        "instagramName": "@blondebundle",
-        "instagramUrl": "http://www.instagram.com/blondebundle",
-        "instagramStatus": "public",
-        "instagramFollowers": "1,097",
-        "website": "http://BLONDEBUNDLE.COM",
-        "email": ""
-    },
-    "Borka G.": {
-        "name": "Borka G.",
-        "location": "",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/borkagamero",
-        "instagramName": "@chicfashionworld",
-        "instagramUrl": "http://www.instagram.com/chicfashionworld",
-        "instagramStatus": "public",
-        "instagramFollowers": "6,741",
-        "website": "http://www.chicfashionworld.com",
-        "email": ""
-    },
-    "Jeannie Y.": {
-        "name": "Jeannie Y.",
-        "location": "Toronto",
-        "country": "Canada",
-        "lookbookUrl": "http://lookbook.nu/leftinpink",
-        "instagramName": "@jeannieyeoh",
-        "instagramUrl": "http://www.instagram.com/jeannieyeoh",
-        "instagramStatus": "public",
-        "instagramFollowers": "654",
-        "website": "http://www.leftinpink.blogspot.ca",
-        "email": ""
-    },
-    "Rachel F.": {
-        "name": "Rachel F.",
-        "location": "Los Angeles",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/rachelfox",
-        "instagramName": "@_rachelfox_",
-        "instagramUrl": "http://www.instagram.com/_rachelfox_",
-        "instagramStatus": "public",
-        "instagramFollowers": "10k",
-        "website": "http://www.rachelfox.co",
-        "email": "rachelfoxburson@gmail.com"
     }
 }
