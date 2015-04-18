@@ -10,7 +10,7 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
 
   var users = [];
 
-  // Load the Lookbook home page to be scraped.
+  // Define request for the Lookbook home page.
   var homePageRequest = function(callback) {
     request(lookbookHomeUrl, function(error, response, html) {
       if (!error) {
@@ -53,7 +53,7 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
     });
   };
 
-  // Load the Lookbook user page to be scraped.
+  // Define request for the Lookbook user page.
   var userPageRequest = function(callback) {
 
     // For each of the users, execute the requests in parallel with async.
@@ -97,13 +97,15 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
     });
   };
 
-  // Load the Instagram user page to be scraped.
+  // Define request for the Instagram user page.
   var igPageRequest = function(callback) {
 
     // For each of the users, execute the requests in parallel with async.
     async.each(users, function(user, callback) {
 
       if (user.instagram_url) {
+
+        // Spoof the iPhone user agent so instagram returns a rendered DOM.
         var options = {
           url: user.instagram_url,
           headers: {
@@ -178,7 +180,7 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
     })
   }
 
-  // Execute each category of request in series.
+  // Execute each category of request in series while within each request the requests run in parallel (with some async magic).
   async.series([
 
     homePageRequest,
@@ -188,6 +190,7 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
   ], function() {
     
     users.forEach(function(user) {
+
       // Save the data in CSV format.
       csv['data'] = csv['data'] + '"' + user.name + '","' + user.location + '","' + user.country + '","' + user.lookbook_url + '","' + user.lookbook_blog + '","' + user.lookbook_site + '","' + user.instagram_name + '","' + user.instagram_url + '","' + user.instagram_status + '","' + user.instagram_followers + '","' + user.website + '","' + user.email + '"\r\n';
 

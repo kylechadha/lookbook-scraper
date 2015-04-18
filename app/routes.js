@@ -35,13 +35,14 @@ module.exports = function(app) {
 
     ], function() {
       
-      // Once scraping is complete, write the json and csv files.
+      // Once scraping is complete, write the json files.
       fs.writeFile('looks.json', JSON.stringify(jsonData, null, 4), function(error) {
         if (!error) {
           console.log('JSON file successfully created.')
         }
       });
 
+      // Check if 'looks.csv' exists.
       fs.exists('looks.csv', function(exists) { 
         if (exists) { 
           fs.readFile('looks.csv', 'utf8', function (error, data) {
@@ -76,7 +77,7 @@ module.exports = function(app) {
         }
       }); 
 
-      // Render the page with the restaurant data.
+      // Render the page with the looks data.
       res.render('layout', {looks: jsonData});
 
     });

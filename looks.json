@@ -1,4 +1,46 @@
 {
+    "Allison K.": {
+        "name": "Allison K.",
+        "location": "San Francisco",
+        "country": "United States",
+        "lookbookUrl": "http://lookbook.nu/brokehell",
+        "lookbookBlog": "http://brokehell.com",
+        "lookbookSite": "",
+        "instagramName": "harvestgoddes",
+        "instagramUrl": "http://www.instagram.com/harvestgoddes",
+        "instagramStatus": "public",
+        "instagramFollowers": "625",
+        "website": "http://brokehell.com",
+        "email": ""
+    },
+    "Natalie A.": {
+        "name": "Natalie A.",
+        "location": "Toronto & Ottawa & The Netherlands",
+        "country": "Canada",
+        "lookbookUrl": "http://lookbook.nu/natalieast",
+        "lookbookBlog": "http://natalieast.com",
+        "lookbookSite": "http://twitter.com/natalieast",
+        "instagramName": "@natalieast",
+        "instagramUrl": "http://www.instagram.com/natalieast",
+        "instagramStatus": "public",
+        "instagramFollowers": "3,263",
+        "website": "http://natalieast.com",
+        "email": "mail@natalieast.com"
+    },
+    "Lee C.": {
+        "name": "Lee C.",
+        "location": "Los Angeles",
+        "country": "United States",
+        "lookbookUrl": "http://lookbook.nu/velvetcloouds",
+        "lookbookBlog": "http://Velvetcloouds.blogspot.com",
+        "lookbookSite": "http://www.bloglovin.com/leepiotrowski",
+        "instagramName": "@Velvetcloouds",
+        "instagramUrl": "http://www.instagram.com/Velvetcloouds",
+        "instagramStatus": "public",
+        "instagramFollowers": "13.4k",
+        "website": "http://www.velvetcloouds.com",
+        "email": "Leecatherinep@yahoo.com"
+    },
     "Sabrina E.": {
         "name": "Sabrina E.",
         "location": "Sacramento, California",
@@ -23,7 +65,7 @@
         "instagramName": "@anita_anti",
         "instagramUrl": "http://www.instagram.com/anita_anti",
         "instagramStatus": "public",
-        "instagramFollowers": "8,762",
+        "instagramFollowers": "8,763",
         "website": "http://facebook.com/anita.anti",
         "email": ""
     },
@@ -121,50 +163,8 @@
         "instagramName": "aretastylesecrets",
         "instagramUrl": "http://www.instagram.com/aretastylesecrets",
         "instagramStatus": "public",
-        "instagramFollowers": "1,253",
+        "instagramFollowers": "1,254",
         "website": "http://www.aretastylesecrets.com",
         "email": "aretabchen@gmail.com"
-    },
-    "Nicole B.": {
-        "name": "Nicole B.",
-        "location": "",
-        "country": "Canada",
-        "lookbookUrl": "http://lookbook.nu/user/2637913-Nicole-B",
-        "lookbookBlog": "http://www.mintchocolatelovenicole.blogspot.ca",
-        "lookbookSite": "http://www.nicoleelizabethphotography.ca",
-        "instagramName": "@nicolebuhler",
-        "instagramUrl": "http://www.instagram.com/nicolebuhler",
-        "instagramStatus": "public",
-        "instagramFollowers": "575",
-        "website": "http://www.mintchocolatelovenicole.blogspot.com",
-        "email": ""
-    },
-    "Mary Ellen  S.": {
-        "name": "Mary Ellen  S.",
-        "location": "Nashville",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/user/619401-Mary-Ellen-S",
-        "lookbookBlog": "http://maryellenskye.com",
-        "lookbookSite": "http://www.pinterest.com/maryellenskye/",
-        "instagramName": "@maryellenskye ",
-        "instagramUrl": "http://www.instagram.com/maryellenskye ",
-        "instagramStatus": "public",
-        "instagramFollowers": "37.4k",
-        "website": "http://www.seeamericagetahaircut.com",
-        "email": "maryellen87@me.com"
-    },
-    "LEXICON T.": {
-        "name": "LEXICON T.",
-        "location": "Osaka, Japan - Seoul, Korea",
-        "country": "United States",
-        "lookbookUrl": "http://lookbook.nu/thelexvision",
-        "lookbookBlog": "http://www.thelexvision.com",
-        "lookbookSite": "http://thelexvision.tumblr.com/",
-        "instagramName": "@thelexvision",
-        "instagramUrl": "http://www.instagram.com/thelexvision",
-        "instagramStatus": "public",
-        "instagramFollowers": "1,203",
-        "website": "http://www.thelexvision.com",
-        "email": ""
     }
 }
