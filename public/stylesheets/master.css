@@ -10,10 +10,6 @@ a {
   display: flex;
   justify-content: center; }
 
-.svg-logo {
-  height: 1em;
-  fill: #fff; }
-
 .container {
   max-width: 1054px; }
 
@@ -29,11 +25,6 @@ a {
 
 .form-group {
   margin-right: 10px; }
-
-.bootstrap-datetimepicker-widget td.active {
-  background-color: #AC9456; }
-  .bootstrap-datetimepicker-widget td.active:hover, .bootstrap-datetimepicker-widget td.active:active, .bootstrap-datetimepicker-widget td.active:focus {
-    background-color: #bdaa78; }
 
 .spinner {
   display: none;
@@ -95,5 +86,5 @@ a {
 .index #datetimepicker1 {
   max-width: 300px; }
 
-.restaurants .table-restaurants {
+.looks .table-looks {
   font-size: 12px; }

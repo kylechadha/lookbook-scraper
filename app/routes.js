@@ -63,7 +63,7 @@ module.exports = function(app) {
           });
         } else {
           // Add column headers to the new data.
-          csvData['data'] = 'name,location,country,lookbook_url,instagram_name,instagram_url,instagram_status,instagram_followers,website,email\r\n' + csvData['data'];
+          csvData['data'] = 'name,location,country,lookbook_url,lookbook_blog,lookbook_site,instagram_name,instagram_url,instagram_status,instagram_followers,website,email\r\n' + csvData['data'];
 
           // Write the file.
           fs.writeFile('looks.csv', csvData['data'], function(error) {

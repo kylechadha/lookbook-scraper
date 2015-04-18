@@ -56,7 +56,7 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
   // Load the Lookbook user page to be scraped.
   var userPageRequest = function(callback) {
 
-    // For each of the users, execute the requests in parallel.
+    // For each of the users, execute the requests in parallel with async.
     async.each(users, function(user, callback) {
 
       request(user.lookbook_url, function(error, response, html) {
@@ -68,11 +68,15 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
           var $ = cheerio.load(html);
 
           // Scrape the instagram info.
+          var lookbook_blog = $('[data-page-track~="blog"]').attr('href');
+          var lookbook_site = $('[data-page-track~="website"]').attr('href');
           var instagram_name = $('[data-page-track~="instagram"]').text();
           var instagram_url = $('[data-page-track~="instagram"]').attr('href');
 
           // Update the users array.
           var index = users.indexOf(user);
+          user.lookbook_blog = lookbook_blog;
+          user.lookbook_site = lookbook_site;
           user.instagram_name = instagram_name;
           user.instagram_url = instagram_url;
           users[index] = user;
@@ -96,7 +100,7 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
   // Load the Instagram user page to be scraped.
   var igPageRequest = function(callback) {
 
-    // For each of the users, execute the requests in parallel.
+    // For each of the users, execute the requests in parallel with async.
     async.each(users, function(user, callback) {
 
       if (user.instagram_url) {
@@ -185,7 +189,7 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
     
     users.forEach(function(user) {
       // Save the data in CSV format.
-      csv['data'] = csv['data'] + '"' + user.name + '","' + user.location + '","' + user.country + '","' + user.lookbook_url + '","' + user.instagram_name + '","' + user.instagram_url + '",' + user.instagram_status + '",' + user.instagram_followers + '",' + user.website + '",' + user.email + '\r\n';
+      csv['data'] = csv['data'] + '"' + user.name + '","' + user.location + '","' + user.country + '","' + user.lookbook_url + '","' + user.lookbook_blog + '","' + user.lookbook_site + '","' + user.instagram_name + '","' + user.instagram_url + '",' + user.instagram_status + '",' + user.instagram_followers + '",' + user.website + '",' + user.email + '\r\n';
 
       // Save the data in JSON format.
       json[user.name] = {};
@@ -193,6 +197,8 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
       json[user.name]['location'] = user.location ? user.location : "";
       json[user.name]['country'] = user.country ? user.country : "";
       json[user.name]['lookbookUrl'] = user.lookbook_url ? user.lookbook_url : "";
+      json[user.name]['lookbookBlog'] = user.lookbook_blog ? user.lookbook_blog : "";
+      json[user.name]['lookbookSite'] = user.lookbook_site ? user.lookbook_site : "";
       json[user.name]['instagramName'] = user.instagram_name ? user.instagram_name : "";
       json[user.name]['instagramUrl'] = user.instagram_url ? user.instagram_url : "";
       json[user.name]['instagramStatus'] = user.instagram_status ? user.instagram_status : "";

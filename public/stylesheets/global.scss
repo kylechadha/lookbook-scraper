@@ -22,11 +22,6 @@ a {
   display: flex;
   justify-content: center;
 }
-.svg-logo {
-  height: 1em;
-  fill: #fff;
-}
-
 
 // Bootstrap Global Overrides
 // -----------------------------------
@@ -48,14 +43,6 @@ a {
 }
 .form-group {
   margin-right: 10px;
-}
-.bootstrap-datetimepicker-widget td.active {
-  background-color: #AC9456;
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: lighten(#AC9456, 10%);
-  }
 }
 
 
