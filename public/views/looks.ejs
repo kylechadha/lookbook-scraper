@@ -1,5 +1,5 @@
-<!-- Section: Restaurants -->
-<!-- <section>
+<!-- Section: Looks -->
+<section>
 
   <div class="container looks">
 
@@ -14,22 +14,30 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>URL</th>
-          <th>Neighborhood</th>
-          <th>Cuisine</th>
-          <th># of Reviews</th>
-          <th>Time Window</th>
+          <th>Location</th>
+          <th>Country</th>
+          <th>Lookbook URL</th>
+          <th>Lookbook Profile Blog</th>
+          <th>Lookbook Profile Site</th>
+          <th>Instagram Name</th>
+          <th>Instagram Followers</th>
+          <th>Instagram Profile Website</th>
+          <th>Instagram Profile Email</th>
         </tr>
       </thead>
       <tbody>
-        <% for(var key in looks) { %>
+        <% for(var user in looks) { %>
           <tr>
-            <td><%= looks[key]['name'] %></td>
-            <td><a target="_blank" href="<%= looks[key]['url'] %>">Link</a></td>
-            <td><%= looks[key]['neighborhood'] %></td>
-            <td><%= looks[key]['cuisine'] %></td>
-            <td><%= looks[key]['reviewCount'] %></td>
-            <td><%= looks[key]['timeWindow'] %></td>
+            <td><%= looks[user]['name'] %></td>
+            <td><%= looks[user]['location'] %></td>
+            <td><%= looks[user]['country'] %></td>
+            <td><%= looks[user]['lookbookUrl'] %></td>
+            <td><%= looks[user]['lookbookBlog'] %></td>
+            <td><%= looks[user]['lookbookSite'] %></td>
+            <td><a target="_blank" href="<%= looks[user]['instagramUrl'] %>"><%= looks[user]['instagramName'] %></a></td>
+            <td><%= looks[user]['instagramFollowers'] %></td>
+            <td><%= looks[user]['website'] %></td>
+            <td><%= looks[user]['email'] %></td>
           </tr>
         <% } %>
       </tbody>
@@ -38,4 +46,3 @@
   </div>
 
 </section>
- -->
