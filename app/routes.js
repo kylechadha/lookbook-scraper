@@ -44,9 +44,9 @@ module.exports = function(app) {
 
       fs.exists('looks.csv', function(exists) { 
         if (exists) { 
-          fs.readFile('looks.csv', 'utf8', function (err,data) {
-            if (err) {
-              return console.log(err);
+          fs.readFile('looks.csv', 'utf8', function (error, data) {
+            if (error) {
+              return console.log(error);
             }
 
             // Append the new data to the original data.
@@ -54,8 +54,8 @@ module.exports = function(app) {
 
             // Write the file.
             fs.writeFile('looks.csv', csvData['data'], function(error) {
-              if (err) {
-                console.log(err);
+              if (error) {
+                console.log(error);
               } else {
                 console.log('CSV file successfully updated.')
               }
@@ -63,12 +63,12 @@ module.exports = function(app) {
           });
         } else {
           // Add column headers to the new data.
-          csvData['data'] = 'name,location,country,lookbook_url,instagram_name,instagram_url,instagram_status,instagram_followers,website,email\r\n' + csv['data'];
+          csvData['data'] = 'name,location,country,lookbook_url,instagram_name,instagram_url,instagram_status,instagram_followers,website,email\r\n' + csvData['data'];
 
           // Write the file.
           fs.writeFile('looks.csv', csvData['data'], function(error) {
-            if (err) {
-              console.log(err);
+            if (error) {
+              console.log(error);
             } else {
               console.log('CSV file successfully created.')
             }
