@@ -51,124 +51,135 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
 
       callback(null);
     });
-  }
+  };
 
-  async.series([
+  // Load the Lookbook user page to be scraped.
+  var userPageRequest = function(callback) {
 
-    homePageRequest,
+    // For each of the users, execute the requests in parallel.
+    async.each(users, function(user, callback) {
 
-    function(callback) {
-      async.each(users, function(user, callback) {
+      request(user.lookbook_url, function(error, response, html) {
+        if (!error) {
 
-        request(user.lookbook_url, function(error, response, html) {
+          console.log('Scraper running on Lookbook user page.');
+
+          // Use Cheerio to load the page.
+          var $ = cheerio.load(html);
+
+          // Scrape the instagram info.
+          var instagram_name = $('[data-page-track~="instagram"]').text();
+          var instagram_url = $('[data-page-track~="instagram"]').attr('href');
+
+          // Update the users array.
+          var index = users.indexOf(user);
+          user.instagram_name = instagram_name;
+          user.instagram_url = instagram_url;
+          users[index] = user;
+
+        } else {
+          callback(error);
+        }
+
+        callback(null);
+      });
+
+    }, function(err) {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null);
+      }
+    });
+  };
+
+  // Load the Instagram user page to be scraped.
+  var igPageRequest = function(callback) {
+
+    // For each of the users, execute the requests in parallel.
+    async.each(users, function(user, callback) {
+
+      if (user.instagram_url) {
+        var options = {
+          url: user.instagram_url,
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4'
+          }
+        };
+
+        request(options, function(error, response, html) {
           if (!error) {
 
-            console.log('Scraper running on Lookbook user page.');
+            console.log('Scraper running on Instagram user page.');
 
             // Use Cheerio to load the page.
             var $ = cheerio.load(html);
 
-            // Scrape the instagram info.
-            var instagram_name = $('[data-page-track~="instagram"]').text();
-            var instagram_url = $('[data-page-track~="instagram"]').attr('href');
+            // Scrape the user info.
+            var instagram_status = $('.status-private').length > 0 ? "private" : "public";
+            var instagram_followers = $($('.number-stat')[1]).text();
+            var website = $('.user-bio a').attr('href');
+            var instagram_info = $('.user-bio').text(),
+              infoArray = instagram_info.split(' '),
+              cleanArray = [],
+              email;
+
+            // Clean up the infoArray.
+            infoArray.forEach(function(item) {
+              // Strip trailing punctuation.
+              item = item.replace(/\b[-.,()&$#!\[\]{}"']+\B|\B[-.,()&$#!\[\]{}"']+\b/g, "");
+
+              // Strip newlines and line breaks.
+              item = item.replace(/\r?\n|\r/g, '');
+              cleanArray.push(item);
+            })
+
+            function validateEmail(email) {
+                var regexp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+                return regexp.test(email);
+            }
+
+            // Find the email address.
+            cleanArray.forEach(function(item) {
+              if (validateEmail(item)) {
+                email = item;
+              }
+            })
 
             // Update the users array.
             var index = users.indexOf(user);
-            user.instagram_name = instagram_name;
-            user.instagram_url = instagram_url;
+            user.instagram_status = instagram_status;
+            user.instagram_followers = instagram_followers;
+            user.website = website;
+            user.email = email;
             users[index] = user;
 
           } else {
             callback(error);
           }
 
-          callback(null);
-        });
-
-      }, function(err) {
-        if (err) {
-          callback(err);
-        } else {
-          callback(null);
-        }
-      });
-    },
-
-    function(callback) {
-      async.each(users, function(user, callback) {
-
-        console.log(user.instagram_url);
-
-        if (user.instagram_url) {
-          request(user.instagram_url, function(error, response, html) {
-            if (!error) {
-
-              console.log('Scraper running on Instagram user page.');
-
-              // Use Cheerio to load the page.
-              var $ = cheerio.load(html);
-
-              debugger;
-
-              // Scrape the user info.
-              var instagram_status = $('.UserProfileHeaderPrivate').length > 0 ? "private" : "public";
-              var instagram_followers = $($('.sCount')[1]).text();
-              var website = $($('.upuiBio span')[3]).find('a').attr('href');
-
-              var instagram_info = $($('.upuiBio span')[1]).text(),
-                infoArray = instagram_info.split(' '),
-                cleanArray = [],
-                email;
-
-              console.log(instagram_status);
-              console.log(instagram_followers);
-              console.log(instagram_info);
-              console.log(website);
-              console.log('\n');
-
-              infoArray.forEach(function(item) {
-                item = item.replace(/\b[-.,()&$#!\[\]{}"']+\B|\B[-.,()&$#!\[\]{}"']+\b/g, "");
-                cleanArray.push(item);
-              })
-
-              function validateEmail(email) {
-                  var regexp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-                  return regexp.test(email);
-              }
-
-              cleanArray.forEach(function(item) {
-                if (validateEmail(item)) {
-                  email = item;
-                }
-              })
-
-              // Update the users array.
-              var index = users.indexOf(user);
-              user.instagram_status = instagram_status;
-              user.instagram_followers = instagram_followers;
-              user.website = website;
-              user.email = email;
-              users[index] = user;
-
-            } else {
-              callback(error);
-            }
-
-            callback(null)
-          })
-        } else {
-          callback(null);
-        }
+          callback(null)
+        })
+      } else {
+        callback(null);
+      }
 
 
-      }, function(err) {
-        if (err) {
-          callback(err);
-        } else {
-          callback(null);
-        }
-      })
-    }
+    }, function(err) {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null);
+      }
+    })
+  }
+
+  // Execute each category of request in series.
+  async.series([
+
+    homePageRequest,
+    userPageRequest,
+    igPageRequest
 
   ], function() {
     
@@ -194,9 +205,5 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
     callback(null);
 
   });
-
-
-
-
 
 }
