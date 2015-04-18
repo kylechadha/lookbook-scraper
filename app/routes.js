@@ -38,7 +38,7 @@ module.exports = function(app) {
       // Once scraping is complete, write the json and csv files.
       fs.writeFile('looks.json', JSON.stringify(jsonData, null, 4), function(error) {
         if (!error) {
-          console.log('JSON file successfully written.')
+          console.log('JSON file successfully created.')
         }
       });
 

@@ -189,7 +189,7 @@ module.exports = function(lookbookHomeUrl, json, csv, callback) {
     
     users.forEach(function(user) {
       // Save the data in CSV format.
-      csv['data'] = csv['data'] + '"' + user.name + '","' + user.location + '","' + user.country + '","' + user.lookbook_url + '","' + user.lookbook_blog + '","' + user.lookbook_site + '","' + user.instagram_name + '","' + user.instagram_url + '",' + user.instagram_status + '",' + user.instagram_followers + '",' + user.website + '",' + user.email + '\r\n';
+      csv['data'] = csv['data'] + '"' + user.name + '","' + user.location + '","' + user.country + '","' + user.lookbook_url + '","' + user.lookbook_blog + '","' + user.lookbook_site + '","' + user.instagram_name + '","' + user.instagram_url + '","' + user.instagram_status + '","' + user.instagram_followers + '","' + user.website + '","' + user.email + '"\r\n';
 
       // Save the data in JSON format.
       json[user.name] = {};
